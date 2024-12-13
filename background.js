@@ -12,9 +12,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         console.log('Stored popupValue in chrome.storage.local');
     });
 
-    // Store popupValue in chrome.storage.session (only persists during this session)
-    // Note: sessionStorage is not available in background scripts, so we use chrome.storage.local for both
-  
+   
  
       if (message.action === "getPopupValue") {
         sendResponse({ value: sessionData.popupValue || null }) ; // Send the value to the popup
@@ -26,3 +24,5 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     }
    
 });
+
+
