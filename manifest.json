@@ -1,22 +1,31 @@
 {
   "manifest_version": 3,
-  "name": "Chrome extension",
+  "name": "AI Summarizer",
   "version": "1.0.0",
+  "description": "AI Summarizer helps you quickly generate concise summaries of web content, articles, documents, and more, directly within your browser. Powered by advanced language models, it boosts your productivity and saves time.",
   "permissions": [
-    "scripting", 
-    "activeTab", 
+    "scripting",
+    "activeTab",
     "clipboardWrite",
-    "tabs", 
-    "alarms", 
-    "storage" 
+    "tabs",
+    "alarms",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
   ],
   "background": {
-    "service_worker": "background.js" 
+    "service_worker": "background.js"
   },
-  "action": { 
-    "default_popup": "index.html" 
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "images/icon-16.png",
+      "32": "images/icon-32.png",
+      "48": "images/icon-48.png",
+      "128": "images/icon-128.png"
+    }
   },
-  "host_permissions": ["<all_urls>"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
@@ -25,8 +34,21 @@
     }
   ],
   "icons": {
+    "16": "images/icon-16.png",
+    "19": "images/icon-19.png",
+    "32": "images/icon-32.png",
+    "38": "images/icon-38.png",
     "48": "images/icon-48.png",
+    "96": "images/icon-96.png",
     "128": "images/icon-128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["images/*.png"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
   }
-
 }
