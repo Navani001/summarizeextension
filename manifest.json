@@ -2,6 +2,7 @@
   "manifest_version": 3,
   "name": "AI Summarizer",
   "version": "1.0.0",
+  "default_locale": "en",
   "description": "AI Summarizer helps you quickly generate concise summaries of web content, articles, documents, and more, directly within your browser. Powered by advanced language models, it boosts your productivity and saves time.",
   "permissions": [
     "scripting",
@@ -11,6 +12,7 @@
     "alarms",
     "storage"
   ],
+    "short_name": "Summarizer",
   "host_permissions": [
     "<all_urls>"
   ],
